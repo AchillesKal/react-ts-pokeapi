@@ -30,7 +30,7 @@ class App extends Component<AppProps, AppState> {
     this.handleItemClick = this.handleItemClick.bind(this);
   }
 
-  apiBasePath = "https://pokeapi.co/api/v2/";
+  apiBasePath = process.env.REACT_APP_API_ENDPOINT;
 
   async fetchRandomPokemon() {
     const apiCall = await fetch(
