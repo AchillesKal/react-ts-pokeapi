@@ -1,23 +1,21 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { PokemonTypeItem } from '../types/pokemon';
+import { PokemonTypeItem } from "../types/pokemon";
 
 type PokemonTypesProps = {
   types: PokemonTypeItem[];
 };
 
-function PokemonTypes({types}: PokemonTypesProps) {
+function PokemonTypes({ types }: PokemonTypesProps) {
   return (
     <TypeWrapper>
-      <TypeLable>
-       Type:
-      </TypeLable> 
-      { types.map((item, index) => {
+      <TypeLable>Type:</TypeLable>
+      {types.map((item, index) => {
         return <Type key={index}>{item.type.name}</Type>;
       })}
     </TypeWrapper>
-  )
+  );
 }
 
 const TypeWrapper = styled.div`
@@ -37,7 +35,7 @@ const TypeLable = styled.div`
 const Type = styled.div`
   margin-right: 10px;
   text-transform: capitalize;
-  border: solid 1px #CCC;
+  border: solid 1px #ccc;
   padding: 3px 5px;
   border-radius: 4px;
 `;

@@ -1,25 +1,25 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { device } from '../device';
-import PokemonTypes from './PokemonTypes';
-import { Pokemon } from '../types/pokemon';
+import { device } from "../device";
+import PokemonTypes from "./PokemonTypes";
+import { Pokemon } from "../types/pokemon";
 
 type PokemonProfileProps = {
   pokemon: Pokemon;
   description: string;
-}
+};
 
-function PokemonProfile({pokemon, description}: PokemonProfileProps) {
+function PokemonProfile({ pokemon, description }: PokemonProfileProps) {
   return (
     <Profile>
       <img width="140" src={pokemon.sprites.front_default} />
       <Attrs>
-        <div>Height: {pokemon.height/10}m</div>
-        <div>Weight: {pokemon.weight/10}kg</div>
+        <div>Height: {pokemon.height / 10}m</div>
+        <div>Weight: {pokemon.weight / 10}kg</div>
       </Attrs>
     </Profile>
-  )
+  );
 }
 
 const Profile = styled.div`
@@ -31,9 +31,9 @@ const Attrs = styled.div`
   text-align: center;
   margin-bottom: 20px;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     text-align: left;
-     margin-bottom: 0;
+    margin-bottom: 0;
   }
 `;
 

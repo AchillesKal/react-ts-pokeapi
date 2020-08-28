@@ -6,14 +6,14 @@ export interface Pokemon {
   weight: number;
   sprites: PokemonSprites;
   species: PokemonSpecies;
-  types: PokemonTypeItem[]
+  types: PokemonTypeItem[];
 }
 
 export interface PokemonStatItem {
   base_stat: number;
   effort: number;
   stat: Stat;
-};
+}
 
 export interface Stat {
   name: string;
@@ -36,5 +36,5 @@ export interface PokemonSprites {
 
 export interface PokemonTypeItem {
   slot: number;
-  type: PokemonType
+  type: PokemonType;
 }

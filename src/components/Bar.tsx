@@ -1,7 +1,7 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { device } from '../device';
+import { device } from "../device";
 
 type BarProps = {
   label: string;
@@ -10,13 +10,13 @@ type BarProps = {
   shortLabel: string;
 };
 
-export default ({label, value, percent, shortLabel}: BarProps) => {
-  return(
+export default ({ label, value, percent, shortLabel }: BarProps) => {
+  return (
     <BarWrap>
       <ShortBarLabel>{shortLabel}</ShortBarLabel>
       <LongBarLabel>{label}</LongBarLabel>
       <Bar>
-        <Indicator style={{width: percent+"%"}}>{value}</Indicator>
+        <Indicator style={{ width: percent + "%" }}>{value}</Indicator>
       </Bar>
     </BarWrap>
   );
@@ -31,7 +31,7 @@ const LongBarLabel = styled.div`
   font-size: 16px;
   display: none;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     display: block;
   }
 `;
@@ -41,7 +41,7 @@ const ShortBarLabel = styled.div`
   display: block;
   margin-right: 10px;
 
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     display: none;
   }
 `;
@@ -60,5 +60,5 @@ const Indicator = styled.div`
   text-align: left;
   padding-left: 5px;
   font-size: 16px;
-  color: #FFF;
-`; 
+  color: #fff;
+`;

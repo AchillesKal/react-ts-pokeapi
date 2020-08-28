@@ -1,38 +1,43 @@
-import React from 'react';
-import styled from 'styled-components'
+import React from "react";
+import styled from "styled-components";
 
-import { device } from '../device';
+import { device } from "../device";
 
 type ModalProps = {
   onModalClose: () => void;
   content: string;
 };
 
-const Modal = ({onModalClose, content}: ModalProps) => {
+const Modal = ({ onModalClose, content }: ModalProps) => {
   return (
     <ModalContainer onClick={onModalClose}>
-      <div className='moda-content'  onClick={(e) => {e.stopPropagation()}}>
-         <button className='modal-close' onClick={onModalClose}>
+      <div
+        className="moda-content"
+        onClick={(e) => {
+          e.stopPropagation();
+        }}
+      >
+        <button className="modal-close" onClick={onModalClose}>
           <i className="fa fa-times-circle"></i>
-         </button>
+        </button>
         {content}
       </div>
     </ModalContainer>
   );
-}
+};
 
-const ModalContainer =  styled.div`
+const ModalContainer = styled.div`
   position: fixed;
   z-index: 1;
-  padding-top: 100px; 
+  padding-top: 100px;
   left: 0;
   top: 0;
   width: 100%;
   height: 100%;
   overflow: auto;
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0, 0, 0, 0.4);
 
-  > div{
+  > div {
     background-color: #fefefe;
     margin: auto;
     padding: 20px;
@@ -42,7 +47,7 @@ const ModalContainer =  styled.div`
     position: relative;
   }
 
-  .modal-close{
+  .modal-close {
     border: 0;
     position: absolute;
     top: 0;
@@ -51,8 +56,8 @@ const ModalContainer =  styled.div`
     background-color: transparent;
   }
 
-  @media ${device.laptop} { 
-    > div{
+  @media ${device.laptop} {
+    > div {
       background-color: #fefefe;
       margin: auto;
       padding: 20px;
@@ -61,6 +66,5 @@ const ModalContainer =  styled.div`
     }
   }
 `;
-
 
 export default Modal;

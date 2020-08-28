@@ -1,12 +1,12 @@
-import React,{ useState, useEffect } from 'react';
-import styled from 'styled-components';
-import Loader from 'react-loader-spinner';
+import React, { useState, useEffect } from "react";
+import styled from "styled-components";
+import Loader from "react-loader-spinner";
 
-import PokemonStats from './PokemonStats';
-import PokemonProfile from './PokemonProfile';
-import PokemonTypes from './PokemonTypes';
-import { device } from '../device';
-import { Pokemon } from '../types/pokemon';
+import PokemonStats from "./PokemonStats";
+import PokemonProfile from "./PokemonProfile";
+import PokemonTypes from "./PokemonTypes";
+import { device } from "../device";
+import { Pokemon } from "../types/pokemon";
 
 type PokemonCardProps = {
   pokemon: Pokemon;
@@ -18,40 +18,41 @@ function PokemonCard({ pokemon }: PokemonCardProps) {
 
   useEffect(() => {
     const fetchPokemonSpecies = async () => {
-      const result = await fetch(pokemon.species.url)
+      const result = await fetch(pokemon.species.url);
       return await result.json();
-    }
+    };
 
-    fetchPokemonSpecies().then(data => {
-      const description = data.flavor_text_entries.filter(item => {
+    fetchPokemonSpecies().then((data) => {
+      const description = data.flavor_text_entries
+        .filter((item) => {
           return item.language.name === "en";
-      })[0].flavor_text.replace(/[^a-zA-Z é . , ']/g, " ");
-      setPokemonDescription(description)
+        })[0]
+        .flavor_text.replace(/[^a-zA-Z é . , ']/g, " ");
+      setPokemonDescription(description);
       setIsReady(true);
     });
   }, []);
 
-  return(
+  return (
     <PokemonCardContainer>
-      { isReady &&
+      {isReady && (
         <div>
-          <PokemonCardTitle>
-            { pokemon.name }
-          </PokemonCardTitle>
+          <PokemonCardTitle>{pokemon.name}</PokemonCardTitle>
           <PokemonTypes types={pokemon.types} />
           <DoubleColumnCard>
-            <PokemonProfile pokemon={pokemon} description={pokemonDescription} />
+            <PokemonProfile
+              pokemon={pokemon}
+              description={pokemonDescription}
+            />
             <StatsWrapper>
               <PokemonStats pokemon={pokemon} />
             </StatsWrapper>
           </DoubleColumnCard>
-          <PokemonDescription>
-            {pokemonDescription}
-          </PokemonDescription>
+          <PokemonDescription>{pokemonDescription}</PokemonDescription>
         </div>
-      }
-      { !isReady &&
-        <div className="d-flex justify-content-center mb-4"> 
+      )}
+      {!isReady && (
+        <div className="d-flex justify-content-center mb-4">
           <Loader
             type="Puff"
             color="#CCC"
@@ -60,7 +61,7 @@ function PokemonCard({ pokemon }: PokemonCardProps) {
             timeout={3000}
           />
         </div>
-      }
+      )}
     </PokemonCardContainer>
   );
 }
@@ -81,13 +82,13 @@ const DoubleColumnCard = styled.div`
   flex-direction: column;
   align-items: center;
 
-  @media ${device.laptop} { 
-   flex-direction: row; 
+  @media ${device.laptop} {
+    flex-direction: row;
   }
 `;
 
 const StatsWrapper = styled.div`
-  @media ${device.laptop} { 
+  @media ${device.laptop} {
     width: 60%;
   }
 `;
