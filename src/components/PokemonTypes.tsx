@@ -7,7 +7,7 @@ type PokemonTypesProps = {
   types: PokemonTypeItem[];
 };
 
-function PokemonTypes({ types }: PokemonTypesProps) {
+const PokemonTypes = ({ types }: PokemonTypesProps) => {
   return (
     <TypeWrapper>
       <TypeLable>Type:</TypeLable>
@@ -16,7 +16,7 @@ function PokemonTypes({ types }: PokemonTypesProps) {
       })}
     </TypeWrapper>
   );
-}
+};
 
 const TypeWrapper = styled.div`
   margin: 10px 0;

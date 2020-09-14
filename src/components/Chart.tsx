@@ -11,9 +11,9 @@ type ChartProps = {
   stats: PokemonStatItem[];
 };
 
-export default ({ range, stats }: ChartProps) => {
+const Chart = ({ range, stats }: ChartProps) => {
   return (
-    <Chart>
+    <ChartRow>
       {stats.map((item, index) => {
         const percent: number = Math.trunc((item.base_stat / range.max) * 100);
         return (
@@ -26,14 +26,16 @@ export default ({ range, stats }: ChartProps) => {
           />
         );
       })}
-    </Chart>
+    </ChartRow>
   );
 };
 
-const Chart = styled.div`
+const ChartRow = styled.div`
   display: flex;
   flex-direction: column;
   height: 200px;
   justify-content: space-between;
   overflow: hidden;
 `;
+
+export default Chart;

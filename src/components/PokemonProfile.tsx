@@ -10,7 +10,7 @@ type PokemonProfileProps = {
   description: string;
 };
 
-function PokemonProfile({ pokemon, description }: PokemonProfileProps) {
+const PokemonProfile = ({ pokemon, description }: PokemonProfileProps) => {
   return (
     <Profile>
       <img width="140" src={pokemon.sprites.front_default} />
@@ -20,7 +20,7 @@ function PokemonProfile({ pokemon, description }: PokemonProfileProps) {
       </Attrs>
     </Profile>
   );
-}
+};
 
 const Profile = styled.div`
   width: 40%;

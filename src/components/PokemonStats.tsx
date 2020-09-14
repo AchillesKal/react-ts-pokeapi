@@ -8,12 +8,12 @@ type PokemonStatsProps = {
   pokemon: Pokemon;
 };
 
-function PokemonStats({ pokemon }: PokemonStatsProps) {
+const PokemonStats = ({ pokemon }: PokemonStatsProps) => {
   return (
     <React.Fragment>
       <Chart range={{ min: 0, max: 150 }} stats={pokemon.stats} />
     </React.Fragment>
   );
-}
+};
 
 export default PokemonStats;

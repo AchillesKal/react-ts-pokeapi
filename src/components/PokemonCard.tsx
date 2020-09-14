@@ -12,7 +12,7 @@ type PokemonCardProps = {
   pokemon: Pokemon;
 };
 
-function PokemonCard({ pokemon }: PokemonCardProps) {
+const PokemonCard = ({ pokemon }: PokemonCardProps) => {
   const [pokemonDescription, setPokemonDescription] = useState<string>("");
   const [isReady, setIsReady] = useState<boolean>(false);
 
