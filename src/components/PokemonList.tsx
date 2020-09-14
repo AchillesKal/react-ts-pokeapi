@@ -30,7 +30,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
   }
 
   getPokemonDataList() {
-    if (this.state.searchTerm != "") {
+    if (this.state.searchTerm !== "") {
       return this.state.pokemonData.filter((pokemon) => {
         return (
           pokemon.name
@@ -67,7 +67,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
 
           document.addEventListener("scroll", this.trackScrolling);
 
-          data.results.map((item) => {
+          data.results.forEach((item) => {
             fetch(item.url)
               .then((response) => response.json())
               .then((data) => {
@@ -112,7 +112,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
               >
                 <h2>{item.name}</h2>
                 <div>
-                  <img src={item.sprites.front_default} />
+                  <img src={item.sprites.front_default} alt={item.name} />
                 </div>
               </ListItem>
             );

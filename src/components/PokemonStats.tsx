@@ -1,6 +1,4 @@
 import React from "react";
-
-import { beutifyLabel } from "../services/utilityService";
 import Chart from "./Chart";
 import { Pokemon } from "../types/pokemon";
 

@@ -2,7 +2,6 @@ import React from "react";
 import styled from "styled-components";
 
 import { device } from "../device";
-import PokemonTypes from "./PokemonTypes";
 import { Pokemon } from "../types/pokemon";
 
 type PokemonProfileProps = {
@@ -13,7 +12,7 @@ type PokemonProfileProps = {
 const PokemonProfile = ({ pokemon, description }: PokemonProfileProps) => {
   return (
     <Profile>
-      <img width="140" src={pokemon.sprites.front_default} />
+      <img width="140" alt={pokemon.name} src={pokemon.sprites.front_default} />
       <Attrs>
         <div>Height: {pokemon.height / 10}m</div>
         <div>Weight: {pokemon.weight / 10}kg</div>

@@ -31,7 +31,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
       setPokemonDescription(description);
       setIsReady(true);
     });
-  }, []);
+  });
 
   return (
     <PokemonCardContainer>
@@ -64,7 +64,7 @@ const PokemonCard = ({ pokemon }: PokemonCardProps) => {
       )}
     </PokemonCardContainer>
   );
-}
+};
 
 const PokemonCardContainer = styled.div`
   font-size: 1.5em;
