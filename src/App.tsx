@@ -82,7 +82,11 @@ class App extends Component<AppProps, AppState> {
             onModalClose={this.handleModalClose}
           />
         )}
-        <h1>ReactJs PokéAPI Client</h1>
+
+        <div className="mt-4 text-center">
+          <h1 className="mb-0">ReactJs PokéAPI Client</h1>
+        </div>
+
         <PokemonList
           onItemClick={this.handleItemClick}
           scrollable={this.state.scrollable}
