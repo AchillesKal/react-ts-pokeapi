@@ -92,7 +92,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
     return (
       <div className="container">
         <div className="row">
-          <div className="my-4 p-0">
+          <div className="my-4 p-0 col-12">
             <input
               onChange={this.handleSearch}
               value={this.state.searchTerm}
