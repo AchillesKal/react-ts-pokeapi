@@ -10,14 +10,14 @@ type BarProps = {
   shortLabel: string;
 };
 
-export default ({ label, value, percent, shortLabel }: BarProps) => {
+const Bar = ({ label, value, percent, shortLabel }: BarProps) => {
   return (
     <BarWrap>
       <ShortBarLabel>{shortLabel}</ShortBarLabel>
       <LongBarLabel>{label}</LongBarLabel>
-      <Bar>
+      <BarRow>
         <Indicator style={{ width: percent + "%" }}>{value}</Indicator>
-      </Bar>
+      </BarRow>
     </BarWrap>
   );
 };
@@ -46,7 +46,7 @@ const ShortBarLabel = styled.div`
   }
 `;
 
-const Bar = styled.div`
+const BarRow = styled.div`
   width: 300px;
   height: 30px;
   box-sizing: border-box;
@@ -62,3 +62,5 @@ const Indicator = styled.div`
   font-size: 16px;
   color: #fff;
 `;
+
+export default Bar;
