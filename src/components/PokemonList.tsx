@@ -107,7 +107,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
             return (
               <ListItem
                 onClick={(e) => this.handleItemClick(item, e)}
-                className="col-sm-3 text-center text-capitalize card mb-4"
+                className="col-md-3 text-center text-capitalize card mb-4"
                 key={item.name}
               >
                 <h2>{item.name}</h2>
