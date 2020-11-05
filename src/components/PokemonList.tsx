@@ -21,7 +21,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
     super(props);
     this.state = {
       pokemonData: [],
-      nextUrl: "https://pokeapi.co/api/v2/pokemon?limit=21&offset=0",
+      nextUrl: "https://pokeapi.co/api/v2/pokemon?limit=24&offset=0",
       loading: false,
       searchTerm: "",
     };
@@ -107,7 +107,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
             return (
               <ListItem
                 onClick={(e) => this.handleItemClick(item, e)}
-                className="col-sm-4 text-center text-capitalize card mb-4"
+                className="col-sm-3 text-center text-capitalize card mb-4"
                 key={item.name}
               >
                 <h2>{item.name}</h2>
@@ -119,7 +119,7 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
           })}
 
           {this.state.loading && (
-            <div className="d-flex justify-content-center mb-4">
+            <div className="d-flex justify-content-center mb-4 w-100">
               <Loader
                 type="Puff"
                 color="#CCC"
