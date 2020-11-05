@@ -125,7 +125,6 @@ class PokemonList extends React.Component<PokemonListProps, PokemonListState> {
                 color="#CCC"
                 height={100}
                 width={100}
-                timeout={3000}
               />
             </div>
           )}
